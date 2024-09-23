@@ -1,0 +1,14 @@
+#!/bin/bash
+# This is a custom assemble script for Source-to-Image (S2I) in OpenShift
+
+# Run the parent assemble script (to handle the default S2I build process)
+/usr/libexec/s2i/assemble
+
+# Install MySQL client libraries (using yum or other package manager depending on the base image)
+yum install -y mysql mysql-devel
+
+# Install the DBD::mysql Perl module
+cpanm DBD::mysql
+
+# Log a message indicating the module installation
+echo "Successfully installed DBD::mysql and MySQL libraries"
