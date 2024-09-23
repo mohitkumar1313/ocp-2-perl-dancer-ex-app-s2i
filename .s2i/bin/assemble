@@ -1,4 +1,4 @@
-/bin/bash
+#!/bin/bash
 # This is a custom assemble script for Source-to-Image (S2I) in OpenShift
 
 # Run the parent assemble script (to handle the default S2I build process)
